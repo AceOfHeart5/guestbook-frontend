@@ -35,12 +35,12 @@ function App() {
 	const addMessage = (e) => {
 		e.preventDefault();
 		if (newMessage.length <= 0) return;
-		const entry = {
-			entry: newMessage
-		}
 		const options = {
 			method: 'POST',
-			body: JSON.stringify(entry)
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+			},
+			body: new URLSearchParams({ 'entry': newMessage })
 		}
 		console.log(options);
 		fetch(backendurl + '/addmessage', options)

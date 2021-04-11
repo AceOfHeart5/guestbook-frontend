@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
-const backendurl = 'https://guestbook-backend-a2tlv.ondigitalocean.app/backend';
+const backendurl = 'https://guestbook-l5nnz.ondigitalocean.app/backend';
 
 function App() {
-
 	const [messages, setMessages] = useState(null);
 	const [newMessage, setNewMessage] = useState('');
 
@@ -12,6 +11,7 @@ function App() {
 		fetch(backendurl + '/getmessages')
 			.then(res => res.json())
 			.then(res => setMessages(res))
+			.then(() => setNewMessage(''))
 			.catch(err => console.log(err));
 	}
 

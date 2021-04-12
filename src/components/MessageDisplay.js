@@ -1,19 +1,4 @@
-import { useState, useEffect } from 'react';
-
-export default function MessageDisplay({ backendurl }) {
-    const [messages, setMessages] = useState(null);
-
-    const fetchMessages = () => {
-        fetch(backendurl + '/getmessages')
-            .then(res => res.json())
-            .then(res => setMessages(res))
-            .catch(err => console.log(err));
-    }
-
-    useEffect(() => {
-        fetchMessages();
-    }, []);
-
+export default function MessageDisplay({ messages }) {
     const displayMessages = () => {
         if (messages === null) return null;
         const result = [];

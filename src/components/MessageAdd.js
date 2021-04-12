@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function MessageAdd({ backendurl }) {
+export default function MessageAdd({ backendurl, fetchMessages }) {
     const [newMessage, setNewMessage] = useState('');
 
     const addMessage = (e) => {
@@ -13,11 +13,11 @@ export default function MessageAdd({ backendurl }) {
 			},
 			body: new URLSearchParams({ 'entry': newMessage })
 		}
-		console.log(options);
+        setNewMessage('');
 		fetch(backendurl + '/addmessage', options)
 			.then(res => res.json())
 			.then(res => console.log(res))
-            .then(() => setNewMessage(''))
+            .then(() => fetchMessages())
 			.catch(err => console.log(err));
     }
 

@@ -18,3 +18,7 @@ body {
   white-space: pre-wrap;
   text-align: left;
 }
+
+.newMessageArea {
+  width: 100%;
+}

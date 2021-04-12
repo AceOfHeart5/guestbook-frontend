@@ -24,11 +24,12 @@ export default function MessageAdd({ backendurl, fetchMessages }) {
     return (
         <form onSubmit={addMessage} action="">
             <textarea
+                className="newMessageArea"
                 placeholder='Type your message here...'
                 value={newMessage}
                 onChange={e => setNewMessage(e.target.value)}
-                cols="60"
-                rows="5">
+                rows="5"
+            >
             </textarea>
             <button type='submit'>Add Message</button>
         </form>

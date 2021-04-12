@@ -21,6 +21,8 @@ function App() {
 
 	return (
 		<div className="App">
+			<h1>Guestbook</h1>
+			<p>Leave a message!</p>
 			<MessageAdd backendurl={backendurl} fetchMessages={fetchMessages}></MessageAdd>
 			<MessageDisplay messages={messages}></MessageDisplay>
 		</div>

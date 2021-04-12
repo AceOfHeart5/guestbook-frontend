@@ -3,9 +3,9 @@ export default function MessageDisplay({ messages }) {
         if (messages === null) return null;
         const result = [];
         messages.forEach(msg => {
-			result.unshift(<li className='message' key={msg.id}>{msg.entry}</li>);
+			result.unshift(<div className='message' key={msg.id}>{msg.entry}</div>);
 		});
-        return <ul>{result}</ul>;
+        return <div>{result}</div>;
     }
 
     return (

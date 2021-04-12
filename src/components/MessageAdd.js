@@ -17,6 +17,7 @@ export default function MessageAdd({ backendurl }) {
 		fetch(backendurl + '/addmessage', options)
 			.then(res => res.json())
 			.then(res => console.log(res))
+            .then(() => setNewMessage(''))
 			.catch(err => console.log(err));
     }
 
